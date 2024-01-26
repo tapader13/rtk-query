@@ -1,11 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const CrudApi = createApi({
   reducerPath: 'CrudApi',
+  tagTypes: ['crud'],
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:7070/' }),
   endpoints: (builder) => ({
     getAllUsers: builder.query({
       query: () => `users`,
       method: 'GET',
+      providesTags: ['crud'],
     }),
     getSpecificUser: builder.query({
       query: (id) => `users/${id}`,
@@ -45,6 +47,7 @@ export const CrudApi = createApi({
           },
         };
       },
+      invalidatesTags: ['crud'],
     }),
   }),
 });

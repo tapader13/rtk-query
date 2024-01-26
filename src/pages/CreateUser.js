@@ -2,11 +2,11 @@ import { useCreateUserMutation } from '../services/Crud';
 
 function CreateUser() {
   const [createUser, { isLoading, isError, isSuccess }] =
-    useCreateUserMutation();
+    useCreateUserMutation(6);
   const data = {
-    id: '9389',
-    username: 'mijan',
-    email: 'mijantapader0@gmail.com',
+    id: 5,
+    username: 'miftah',
+    email: 'mitapader0@gmail.com',
     password: '123456qQ',
   };
   const handleCrt = () => {

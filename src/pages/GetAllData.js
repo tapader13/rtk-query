@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import { useGetAllUsersQuery } from '../services/Crud';
 
 function GetAllData() {
   const { data, isLoading, isError } = useGetAllUsersQuery();
   console.log(data);
+
   return (
     <div>
       <>
